@@ -91,6 +91,18 @@ APPS = ["Tool Advisor", "Testna poročila odrezilnih ploščic", "Poiščite pra
         "Namestitev in nastavitev TA kotnih glav", "Čeljusti za vsako stružno glavo", "Gnana orodja"]
 
 # ---------------------------------------------------------------- partials
+TRACK = """<script>
+(function () {
+  if (!/[?&]r=/.test(location.search)) return;
+  var s = document.createElement('script');
+  s.async = true;
+  s.referrerPolicy = 'no-referrer';
+  s.setAttribute('data-landing', location.href);
+  s.src = 'https://phplaravel-758037-6569212.cloudwaysapps.com/v/script.js';
+  document.head.appendChild(s);
+})();
+</script>"""
+
 def head(title, desc):
     return f"""<!doctype html>
 <html lang="sl" class="no-js">
@@ -103,6 +115,7 @@ def head(title, desc):
 <link rel="icon" href="assets/img/favicon.png">
 <link rel="preload" href="assets/fonts/Aeonik-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css">
+{TRACK}
 </head>
 <body>
 """
